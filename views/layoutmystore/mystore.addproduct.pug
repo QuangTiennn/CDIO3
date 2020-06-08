@@ -1,0 +1,64 @@
+extends ../../views/layout/layout.pug
+block content
+    html  
+    head
+      meta(charset='UTF-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      meta(http-equiv='X-UA-Compatible' content='ie=edge')
+      title CDIO 3
+    body
+      .navbar#navbarTop 
+      .navbar#navbarBelow
+        nav#navbarLogo
+          a(href="/")
+            img(src="../images/logo.jpg" style="width:100%; height=100%;")
+        nav#navbarSearch
+          form.form-inline
+            input#inputFormSearch.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search' )
+            button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+        nav#navbarInfoUser 
+          a(href="#") User
+        nav#navbarHelpCenter
+          a(href="#") Trung Tâm Hỗ Trợ
+      .body-page#body-page-mystore
+        .sidebar#sidebar
+          .sidebarcontent#sidebar-content    
+            h6#product-manager Quản Lí Sản Phẩm
+              ul
+                a(href="/mystore")
+                  li(type="none") Tất Cả Sản Phẩm
+                a(href="/mystore/add-product")  
+                  li(type="none") Thêm Sản Phẩm
+            h6#order-manager Quản Lí Đơn Hàng
+              ul
+                a(href="/mystore/all-order")
+                  li(type="none")  Tất Cả Đơn Hàng
+                a(href="/mystore/order-wait")  
+                  li(type="none")  Đơn Hàng Chờ
+                a(href="/mystore/order-delivery") 
+                  li(type="none")  Đơn Hàng Đang Giao
+            h6#revenue Doanh Thu
+              ul 
+                a(href="/mystore/revenue")
+                  li(type="none") Doanh Thu
+                a(href="/mystore/wallet")
+                  li(type="none") Ví
+        form#form-add-product-mystore(action = "/mystore/add-product" method = "POST" enctype = "multipart/form-data")
+            .form-group
+                label(for="nameProduct") Tên Sản Phẩm :
+                input#nameProduct.form-control(type="text" name = "nameProduct" placeholder = " Tên sản phẩm...")
+            .form-group
+                label(for="amountProduct") Số Lượng :
+                input#amountProduct.form-control(type="text" name = "amountProduct" placeholder = "Số lượng sản phẩm...")
+            .form-group
+                label(for="priceProduct") Giá Sản Phẩm :
+                input#priceProduct.form-control(type="text" name = "priceProduct" placeholder = "Giá sản phẩm ...")
+            .form-group
+                label(for="describeProduct") Mô Tả Sản Phẩm :
+                input#describeProduct.form-control(type="text" name = "describeProduct" placeholder = "Mô tả sản phẩm ...")
+            .form-group
+                label(for="imageProduct") Hình Ảnh Sản Phẩm :
+                input#imageProduct.form-control-file(type="file" name = "imageProduct")
+            button.btn.btn-info Thêm Sản Phẩm 
+        
+        

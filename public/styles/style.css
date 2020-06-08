@@ -1,0 +1,340 @@
+#navbarTop {
+    background-color:forestgreen;
+    height: 50px;
+}
+
+#mystore {
+    margin-left: 800px;
+    color: black;
+}
+
+#notification{
+    color: black;
+}
+
+#help{
+    color: black;
+}
+
+#registration{  
+    color: black;
+}
+
+#logIn{
+    color: black;
+}
+
+#navbarBelow{
+    background-color:forestgreen;
+    height: 100px;
+}
+
+#navbarLogo{
+    margin-left: 100px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+}
+
+#navbarSearch{ 
+}
+
+#inputFormSearch{
+    width: 600px;
+}
+
+#navbarCart {
+    margin-right: 200px;
+}
+
+#body-page{
+    margin-top: 20px;
+}
+
+#card-product{
+    width: 190px;
+    height: 285px;
+}
+
+#show-product{
+    
+}
+
+#card-body{
+   padding-top: 0px;
+   padding-left: 2px;
+   height:285px;
+}
+
+#nameProdut, #priceProduct{
+    margin-bottom: 0;
+}
+#amountProduct{
+    font-size: 10px;
+}
+#priceProduct {
+    color: red;
+}
+
+#btnEdit {
+    margin-left: 80px;
+}
+#btnDel {
+    margin-left: 2px;
+}
+
+/* mystore */
+
+#sidebar{
+    background-color: #ECECE3;
+    width: 200px;
+    height: 610px;
+}
+
+#sidebar-content {
+    padding-top: 20px;
+    margin-right: 2px;
+}
+
+#body-page-mystore{
+    display: flex;
+}
+
+#show-product-mystore{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#card-product-mystore{
+    width: 190px;
+    height: 285px;
+}
+
+#nameProduct,#amountProduct,#priceProduct{
+    margin-bottom: 0;
+}
+/* mystore add product */
+
+#form-add-product-mystore{
+    padding-top: 50px;
+    padding-left: 200px;
+}
+
+#name-product,#price-product,#describe-product{
+    width: 500px;
+}
+
+
+/* mystore edit product */
+#card-product-mystoreEdit {
+    width: 190px;
+    height: 285px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+/* mystore view product */
+#containerViewProduct{
+    display: flex;
+}
+
+#card-product-mystoreView{
+    margin-top: 30px;
+    width: 350px;
+    height: 350px;
+}
+
+#tableViewProduct{
+    width: 500px;
+    height: 300px;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+#trTableViewProduct{
+    height: 20px;
+}
+
+#btnBuy{
+    margin-left: 40px;
+}
+
+/*login page*/
+#bodyLogin{
+    background-image:url(../images/bgLogin.jpg);
+}
+#loginHere{
+    margin-left: 200px;
+    margin-top: 80px;
+    margin-bottom: 0;
+    font-size: 30px;
+    color: floralwhite;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.alertError{
+    color: red;
+    text-align: center;
+}
+
+#divFormLogin{
+    background-color:#2D5F7B;
+    margin-left: 200px;
+    margin-top: 100px;
+    box-shadow: 5px 10px 8px 10px rgb(35, 80, 105);
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    width: 700px;
+    height: 500px;
+}
+
+#formLogin{
+    width:500px;
+    height: 500px;
+}
+
+#inputUserNameLogin,
+#inputPasswLogin{
+    width: 400px;
+    height: 40px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
+#inputUserNameLogin{
+    margin-left: 150px;
+    margin-top: 30px;
+}
+
+#inputPasswLogin{
+    margin-left: 150px;
+}
+
+#inputCheckBoxLogin{
+    margin-left: 150px;
+}
+
+#btnLogin{
+    margin-left: 280px;
+}
+
+#registrationLogin{
+    margin-left: 260px;
+}
+
+/* page register */
+
+#bodyRegister{
+    background-image:url(../images/bgLogin.jpg);
+}
+#registerHere{
+    margin-left: 200px;
+    margin-top: 80px;
+    margin-bottom: 0;
+    font-size: 30px;
+    color: floralwhite;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.alertError{
+    color: red;
+    text-align: center;
+}
+
+#divFormRegister{
+    background-color:#2D5F7B;
+    margin-left: 200px;
+    margin-top: 50px;
+    box-shadow: 5px 10px 8px 10px rgb(35, 80, 105);
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    width: 700px;
+    height: auto;
+}
+
+#formRegister{
+    width:500px;
+    height: 500px;
+}
+
+#inputUserNameRegister,
+#inputPasswRegister,
+#inputRank,
+#inputAddress,
+#inputPhoneNumber,
+#inputEmail,
+#inputIdCard{
+    width: 400px;
+    height: 40px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
+#inputUserNameRegister{
+    margin-left: 150px;
+    margin-top: 30px;
+}
+
+#inputPasswRegister,
+#inputRank,
+#inputAddress,
+#inputPhoneNumber,
+#inputEmail,
+#inputIdCard,
+#avatar{
+    margin-left: 150px;
+}
+
+#btnRegister{
+    margin-left: 280px;
+    width: 150px;
+}
+
+/* edit user */
+#inputEditUserName,
+#inputEditUserPassw,
+#inputEditUserRank,
+#inputEditUserAddress,
+#inputEditUserPhoneNumber,
+#inputEditUserEmail,
+#avatarEditUser,
+#inputEditUserIdCard{
+    width: 400px;
+    height: 40px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+} 
+#formEditUser,
+#editUserHere{
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+#editUserHere{
+    margin-left: 250px;
+    margin-top: 40px;
+    margin-bottom: 10;
+    font-size: 30px;
+    color:black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#btnformEditUser,
+#cardEditUser{
+    margin-top: 30px;
+    margin-left: 150px;
+}
+
+#cardEditUser{
+    width: 188px;
+    height: 250px;
+}
+
+#divFormEditUser{
+    display: flex;
+}

@@ -1,0 +1,35 @@
+extends ../../views/layout/layout.pug
+block content
+     html
+        head
+            meta(charset='UTF-8')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            meta(http-equiv='X-UA-Compatible' content='ie=edge')
+            title CDIO 3
+            body#bodyRegister
+                .container 
+                    div#divFormRegister
+                        label#registerHere(for="loginHere") Đăng Kí Tại Đây
+                        if errors
+                            each error in errors
+                                .alert.alertError= error
+                        form#formRegister(action="/user/register" method = "POST" enctype="multipart/form-data")
+                            .form-group
+                                input#inputUserNameRegister(type="text" name="userName" placeholder="  Tên Đăng Nhập ...")
+                            .form-group
+                                input#inputPasswRegister(type="password" name="password" placeholder="  Mật Khẩu ...")
+                            //- .form-group
+                            //-     input#inputRank(type="number" name="rank" placeholder="quyền...")
+                            .form-group
+                                input#inputAddress(type="text" name="address" placeholder="Địa Chỉ...")
+                            .form-group
+                                input#inputPhoneNumber(type="number" name="numberPhone" placeholder="Số Điện Thoại...")
+                            .form-group
+                                input#inputEmail(type="text" name="Email" placeholder="Email...")
+                            .form-group
+                                input#avatar.form-control-file(name = "avatar" ,type="file")
+                            .form-group
+                                input#inputIdCard(type="number" name="idCard" placeholder="Chứng Minh Nhân Dân")
+                            .form-group#btnRegister
+                                button.btn-success(type="submit") Đăng Kí
+                

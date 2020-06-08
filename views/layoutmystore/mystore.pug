@@ -1,0 +1,59 @@
+extends ../../views/layout/layout.pug
+block content
+  html  
+    head
+      meta(charset='UTF-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      meta(http-equiv='X-UA-Compatible' content='ie=edge')
+      title My Store
+    body
+      .navbar#navbarTop 
+      .navbar#navbarBelow
+        nav#navbarLogo
+          a(href="/")
+            img(src="../images/logo.jpg" style="width:100%; height=100%;")
+        nav#navbarSearch
+          form.form-inline
+            input#inputFormSearch.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search' )
+            button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+        nav#navbarInfoUser 
+          a(href="#") User
+        nav#navbarHelpCenter
+          a(href="#") Trung Tâm Hỗ Trợ
+      .body-page#body-page-mystore
+        .sidebar#sidebar
+          .sidebarcontent#sidebar-content    
+            h6#product-manager Quản Lí Sản Phẩm
+              ul
+                a(href="/mystore") 
+                  li(type="none") Tất Cả Sản Phẩm
+                a(href="/mystore/add-product")  
+                  li(type="none") Thêm Sản Phẩm
+            h6#order-manager Quản Lí Đơn Hàng
+              ul
+                a(href="/mystore/all-order")
+                  li(type="none")  Tất Cả Đơn Hàng
+                a(href="/mystore/order-wait")  
+                  li(type="none")  Đơn Hàng Chờ
+                a(href="/mystore/order-delivery") 
+                  li(type="none")  Đơn Hàng Đang Giao
+            h6#revenue Doanh Thu
+              ul 
+                a(href="/mystore/revenue")
+                  li(type="none") Doanh Thu
+                a(href="/mystore/wallet")
+                  li(type="none") Ví
+        .product#show-product-mystore
+            .row
+              each product in products
+                .col-sm-6.col-md-4.col-lg-auto
+                  .card.mb-3#card-product-mystore
+                      a(href='/mystore/view-product/'+ product.id)
+                        img(style="width:188px;height:188px" src= product.imageProduct).card-img-top
+                      .card-body#card-body(style="width:188px")
+                        a(href='/mystore/view-product/'+ product.id)
+                          h5#nameProduct.card-title= product.nameProduct
+                        h5#amountProduct.card-title= "Còn: " + product.amountProduct +" Cái"
+                        h5#priceProduct.card-title= product.priceProduct +"₫"
+                        a#btnEdit.btn.btn-primary(class="fas fa-edit" href="/mystore/edit-product/" + product.id)
+                        a#btnDel.btn.btn-danger(class="fas fa-trash-alt" href="/mystore/delete-product/" + product.id)
