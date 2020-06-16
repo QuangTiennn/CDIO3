@@ -338,3 +338,8 @@
 #divFormEditUser{
     display: flex;
 }
+
+/* page cart */
+#btnBuyProduct{
+    margin-left: 83%;
+}

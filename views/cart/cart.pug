@@ -31,16 +31,10 @@ block content
                     th Số Lượng
                     th Thành Tiền
                     th Thao Tác
-                each product in products 
+                each item in cart
                     tr
-                        //- td
-                        //-     img(style ="with: 32px; height:32px")(src= "/" + product.avatar)
-                        td= product.nameProduct
-                        td= this.totalPrice
-                        td= this.totalQty
-                        //- td= user.totalPrice
-                        //- td
-                        //-     a#btnEditUser.btn.btn-primary(class="fas fa-edit" href="/user/update-user/" + user.id)
-                        //- td
-                        //-     a#btnDelUser.btn.btn-danger(class="fas fa-trash-alt" href="/user/delete-user/" + user.id)
-            button.btn.btn-info Mua Hàng
+                        td= item.product.nameProduct
+                        td= item.product.priceProduct
+                        td= item.totalQty
+                        td= item.totalQty * item.product.priceProduct
+            button#btnBuyProduct.btn.btn-info Mua Hàng
