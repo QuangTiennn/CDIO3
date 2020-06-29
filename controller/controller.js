@@ -1,9 +1,11 @@
 var Product = require("../models/product.model");
 var Session = require("../models/session.model");
+var User = require("../models/user.model");
 
 module.exports.index = async (req, res) => {
   let products = await Product.find();
   res.render("../views/index.pug", {
+    title: "CDIO3",
     products: products,
   });
 };
@@ -20,8 +22,9 @@ module.exports.searchProduct = async (req, res) => {
 
 module.exports.indexCart = async (req, res) => {
   const session = await Session.findById(req.signedCookies.sessionId).populate('cart.product');
-  console.log(session.cart)
+  //console.log(session.cart)
   res.render("../views/cart/cart.pug", {
+    title : "Giỏ Hàng",
     cart: session.cart
   });
 };

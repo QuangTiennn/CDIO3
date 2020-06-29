@@ -1,43 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+}
+
+.navbar{
+    left: 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    padding: 0;
+}
 #navbarTop {
-    background-color:forestgreen;
-    height: 50px;
+    background-color: #CD853F;
+    height: 30px;
 }
 
 #mystore {
     margin-left: 800px;
-    color: black;
+    color:white;
 }
 
-#notification{
-    color: black;
-}
-
-#help{
-    color: black;
-}
-
-#registration{  
-    color: black;
-}
-
-#logIn{
-    color: black;
+#notification, #logIn, #registration, #help {
+    color:white;
 }
 
 #navbarBelow{
-    background-color:forestgreen;
+    background-color: #CD853F;
     height: 100px;
 }
 
 #navbarLogo{
     margin-left: 100px;
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     display: flex;
 }
 
-#navbarSearch{ 
-}
+#navbarSearch{}
 
 #inputFormSearch{
     width: 600px;
@@ -47,13 +48,35 @@
     margin-right: 200px;
 }
 
+#cart {
+    font-size: 30px;
+    color: white;
+}
+
 #body-page{
     margin-top: 20px;
+}
+
+.mySlides .imgSlide{
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mySlides {
+    width: 96%;
 }
 
 #card-product{
     width: 190px;
     height: 285px;
+}
+
+#cartTitlePriceProduct,
+#amountProduct,
+#cartTitleNameProduct{
+    /* text-align: center; */
 }
 
 #show-product{
@@ -88,12 +111,13 @@
 #sidebar{
     background-color: #ECECE3;
     width: 200px;
-    height: 610px;
+    height: auto;
 }
 
 #sidebar-content {
     padding-top: 20px;
     margin-right: 2px;
+    width: 200px;
 }
 
 #body-page-mystore{
@@ -105,6 +129,11 @@
     padding-top: 20px;
 }
 
+#rowShowProductMyStore{
+   margin-right: 0;
+   margin-left: 20px;
+}
+
 #card-product-mystore{
     width: 190px;
     height: 285px;
@@ -112,12 +141,14 @@
 
 #nameProduct,#amountProduct,#priceProduct{
     margin-bottom: 0;
+
 }
 /* mystore add product */
 
 #form-add-product-mystore{
     padding-top: 50px;
     padding-left: 200px;
+    margin-bottom: 60px;
 }
 
 #name-product,#price-product,#describe-product{
@@ -161,7 +192,8 @@
 
 /*login page*/
 #bodyLogin{
-    background-image:url(../images/bgLogin.jpg);
+   background:  linear-gradient(to right, #3a4354, #999999);
+    overflow-y: hidden;
 }
 #loginHere{
     margin-left: 200px;
@@ -178,10 +210,10 @@
 }
 
 #divFormLogin{
-    background-color:#2D5F7B;
+    background:  linear-gradient(to right, #3a4354, #999999);
     margin-left: 200px;
     margin-top: 100px;
-    box-shadow: 5px 10px 8px 10px rgb(35, 80, 105);
+    box-shadow: 5px 5px 5px 5px rgb(35, 80, 105);
     border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -205,7 +237,6 @@
 
 #inputUserNameLogin{
     margin-left: 150px;
-    margin-top: 30px;
 }
 
 #inputPasswLogin{
@@ -217,11 +248,13 @@
 }
 
 #btnLogin{
-    margin-left: 280px;
+    margin-left: 130px;
 }
 
-#registrationLogin{
+#registrationLogin a, #forgotPassword a{
     margin-left: 260px;
+    color: white;
+    font-size: 13px;
 }
 
 /* page register */
@@ -241,6 +274,7 @@
 .alertError{
     color: red;
     text-align: center;
+    font-size: 15px;
 }
 
 #divFormRegister{

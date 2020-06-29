@@ -1,4 +1,4 @@
-extends ../../views/layout/layout.pug
+extends ../../views/layout/layoutUser.pug
 block content
     html  
         head
@@ -7,22 +7,7 @@ block content
             meta(http-equiv='X-UA-Compatible' content='ie=edge')
             title CDIO 3
         body
-            .navbar#navbarTop
-                a#mystore(href = "/mystore") Gian Hàng Của Bạn
-                a#notification(href = "#") Thông Báo
-                a#help(href = "#") Trợ Giúp
-                a#registration(href = "/user/register") Đăng Ký
-                a#logIn(href = "/user/login") Đăng Nhập
-            .navbar#navbarBelow
-                nav#navbarLogo
-                    a(href="/")
-                        img(src="../images/logo.jpg" style="width:100%; height=100%;")
-                nav#navbarSearch
-                form.form-inline(action = "/search/" method = "GET")
-                    input#inputFormSearch.form-control.mr-sm-2(type='text' name = "q" placeholder='Search' aria-label='Search')
-                    button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
-                nav#navbarCart 
-                a(href="#") 
+            //- s
         .container
             table.table
                 tr

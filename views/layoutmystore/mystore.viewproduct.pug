@@ -4,22 +4,6 @@ block content
         head
             title product name
         body
-            .navbar#navbarTop
-                a#mystore(href = "/mystore") Gian Hàng Của Bạn
-                a#notification(href = "#") Thông Báo
-                a#help(href = "#") Trợ Giúp
-                a#registration(href = "#") Đăng Ký
-                a#logIn(href = "#") Đăng Nhập
-            .navbar#navbarBelow
-                nav#navbarLogo
-                    a(href="/")
-                        img(src="../../images/logo.jpg" style="width:100%; height=100%;")
-                nav#navbarSearch
-                    form.form-inline
-                        input#inputFormSearch.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search' )
-                        button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
-                nav#navbarCart 
-                    a(href="#") Cart
             .container#containerViewProduct
                 .card.mb-3#card-product-mystoreView
                     a
@@ -50,9 +34,9 @@ block content
                         tr
                             td
                                 a#btnAddToCart.btn.btn-outline-primary(href="/add-to-cart/" + products.id) Thêm Vào Giỏ Hàng
-                                a#btnBuy.btn.btn-outline-info(href="/") Mua Ngay
+                                a#btnBuy.btn.btn-outline-primary(href="/") Mua Ngay
             .container#ShopCard
-                h5 Shop Của Nam
+                h5 Shop Của....
             .container#describeProduct
                 h5 Mô Tả :
                     h6= products.describeProduct

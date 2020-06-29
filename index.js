@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
-const session = require("express-session")
+// const session = require("express-session")
 const port = 9999;
 
 const router = require("./router/router.js");
@@ -33,7 +33,7 @@ mongoose.connect(process.env.MONGO_URL).then(function() {
   app.set("view engine", "pug");
   // app.use(sesionMiddleware);
   app.use("/", sessionMiddleware,router);
-  app.use("/mystore", myStoreRouter);
+  app.use("/mystore",validateLogin.requireAuth, myStoreRouter);
   app.use("/user",authRouter);
   app.use("/user",validateLogin.requireAuth,userRouter);
   
@@ -41,6 +41,5 @@ mongoose.connect(process.env.MONGO_URL).then(function() {
   app.listen(port, ()=>{
       console.log("App is running with port " +port);
   });
-  
 });
 

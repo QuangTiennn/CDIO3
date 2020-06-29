@@ -1,4 +1,4 @@
-extends ../../views/layout/layout.pug
+extends ../../views/layout/layoutLogin.pug
 block content
     html
         head
@@ -20,7 +20,10 @@ block content
                             input#inputPasswLogin(type="password" name="password" placeholder="  Mật Khẩu ...")
                         .form-group#inputCheckBoxLogin
                             input(type="checkbox" name="rememberPassword")
-                            label(for="rememberPassword") Lưu Mật Khẩu
+                            label(for="rememberPassword") &nbsp Lưu Mật Khẩu
                         .form-group#btnLogin
-                            button.btn-success(type="submit") Đăng Nhập
-                        a#registrationLogin(href = "/") Đăng Ký Tài Khoản
+                            button#btnLogin.btn.btn-outline-light(type="submit") Đăng Nhập
+                        #forgotPassword
+                            a(href = "/user/forgot-password") Quên Mật Khẩu
+                        #registrationLogin
+                            a(href = "/") Đăng Ký Tài Khoản

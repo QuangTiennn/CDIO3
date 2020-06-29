@@ -1,8 +1,16 @@
 var mongoose = require("mongoose");
 
 var productSchema = new mongoose.Schema({
-    nameProduct : String,
-    priceProduct : Number,
+    nameProduct : {
+        type :String,
+        trim : true,
+        required : true
+    },
+    priceProduct : {
+        type :Number,
+        trim : true,
+        required : true
+    },
     describeProduct : String,
     imageProduct : String,
     amountProduct : Number,

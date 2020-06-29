@@ -5,44 +5,42 @@ block content
       meta(charset='UTF-8')
       meta(name='viewport' content='width=device-width, initial-scale=1.0')
       meta(http-equiv='X-UA-Compatible' content='ie=edge')
-      title CDIO 3
+      title #{title}
     body
-      .navbar#navbarTop
-        a#mystore(href = "/mystore") Gian Hàng Của Bạn
-        a#notification(href = "#") Thông Báo
-        a#help(href = "#") Trợ Giúp
-        a#registration(href = "/user/register") Đăng Ký
-        a#logIn(href = "/user/login") Đăng Nhập
-        if user
-          p=user.userName
-      .navbar#navbarBelow
-        nav#navbarLogo
-          a(href="/")
-            img(src="./images/logo.jpg" style="width:100%; height=100%;")
-        nav#navbarSearch
-          form.form-inline(action = "/search/" method = "GET")
-            input#inputFormSearch.form-control.mr-sm-2(type='text' name = "q" placeholder='Search' aria-label='Search')
-            button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
-        nav#navbarCart 
-          a(href="/cart") Cart
-
       .container
-        .body-page#body-page
-          //- div#slide-advertisement
-          //-   img#mySlides(src='./images/slide1.jpg')
-          //-   img.mySlides(src='./images/slide2.jpg')
-          //-   img.mySlides(src='./images/slide3.jpg')
-          //-   img.mySlides(src='./images/slide4.jpg')
-          //-   img.mySlides(src='./images/slide5.jpg')
+          .mySlides
+            img.imgSlide(src='/images/img-1.jpg', style='width:100%')
+          .mySlides
+            img.imgSlide(src='/images/img-2.jpg', style='width:100%')
+          .mySlides
+            img.imgSlide(src='/images/img-3.jpg', style='width:100%')
+          .mySlides
+            img.imgSlide(src='/images/img-4.jpg', style='width:100%')
           .product#show-product
+            h2 Sản Phẩm Mới
             .row
                 each product in products
                   .col-sm-6.col-md-4.col-lg-auto
                     .card.mb-3#card-product
                         a(href='/mystore/view-product/'+ product.id)
                           img(style="width:188px;height:188px" src= product.imageProduct).card-img-top
-                        .card-body#card-body(style="width:275")
+                        .card-body#card-body(style="width:188px")
                           a(href="/mystore/view-product/"+ product.id)
-                            h5.card-title= product.nameProduct
+                            h5#cartTitleNameProduct.card-title= product.nameProduct
                           h5#amountProduct.card-title= "Còn: " + product.amountProduct +" Cái"
-                          h5(style="color:red").card-title= product.priceProduct +"₫"
+                          h5#cartTitlePriceProduct(style="color:red").card-title= product.priceProduct +"₫"
+    script.
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("imgSlide");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 5000); 
+      }

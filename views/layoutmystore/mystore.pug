@@ -7,19 +7,6 @@ block content
       meta(http-equiv='X-UA-Compatible' content='ie=edge')
       title My Store
     body
-      .navbar#navbarTop 
-      .navbar#navbarBelow
-        nav#navbarLogo
-          a(href="/")
-            img(src="../images/logo.jpg" style="width:100%; height=100%;")
-        nav#navbarSearch
-          form.form-inline
-            input#inputFormSearch.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search' )
-            button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
-        nav#navbarInfoUser 
-          a(href="#") User
-        nav#navbarHelpCenter
-          a(href="#") Trung Tâm Hỗ Trợ
       .body-page#body-page-mystore
         .sidebar#sidebar
           .sidebarcontent#sidebar-content    
@@ -34,9 +21,11 @@ block content
                 a(href="/mystore/all-order")
                   li(type="none")  Tất Cả Đơn Hàng
                 a(href="/mystore/order-wait")  
-                  li(type="none")  Đơn Hàng Chờ
+                  li(type="none")  Đơn Hàng Mới
                 a(href="/mystore/order-delivery") 
                   li(type="none")  Đơn Hàng Đang Giao
+                a(href="/mystore/order-delivery") 
+                  li(type="none")  Đơn Hàng Hủy
             h6#revenue Doanh Thu
               ul 
                 a(href="/mystore/revenue")
@@ -44,7 +33,7 @@ block content
                 a(href="/mystore/wallet")
                   li(type="none") Ví
         .product#show-product-mystore
-            .row
+            .row#rowShowProductMyStore
               each product in products
                 .col-sm-6.col-md-4.col-lg-auto
                   .card.mb-3#card-product-mystore

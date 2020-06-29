@@ -42,3 +42,7 @@ module.exports.postRegister = async (req,res)=> {
     await User.create(body);
     res.redirect("/");
 }
+
+module.exports.getGorgotPassword = (req, res)  => {
+    res.render("../views/layoutauth/forgotPassword.pug");
+};

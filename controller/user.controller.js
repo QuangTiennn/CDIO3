@@ -7,6 +7,8 @@ module.exports.allUser = async (req,res) => {
     })
 }
 
+
+
 module.exports.getEditUser = async (req,res) => {
     try{
         var id = req.params.id;
