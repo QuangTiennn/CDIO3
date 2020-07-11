@@ -1,0 +1,23 @@
+extends ../../views/layout/layoutUser.pug
+block content
+    html  
+        head
+            meta(charset='UTF-8')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            meta(http-equiv='X-UA-Compatible' content='ie=edge')
+            title CDIO 3
+        body
+            //- s
+        .container
+            h4 Danh Mục Sản Phẩm
+            a#btnEditUser.btn.btn-primary(href="/add-list" class="fas fa-plus")
+            table.table
+                tr
+                    th Tên Danh Mục
+                    th Action
+                each list in lists 
+                    tr
+                        td= list.listName
+                        td
+                            a#btnEditUser.btn.btn-primary(class="fas fa-edit" href="/update-manage-list/" + list.id)
+                            a#btnDelUser.btn.btn-danger(class="fas fa-trash-alt" href="/delete-manage-list/" + list.id)

@@ -21,4 +21,6 @@ block content
                             td= item.product.priceProduct
                             td= item.totalQty
                             td= item.totalQty * item.product.priceProduct
+                            td
+                                a#btnDel.btn.btn-danger(class="fas fa-trash-alt" href="/delete-product-shopingcart/" + item.product.id)
                 button#btnBuyProduct.btn.btn-info Mua Hàng

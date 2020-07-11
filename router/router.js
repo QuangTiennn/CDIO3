@@ -11,4 +11,6 @@ router.get("/search",controller.searchProduct);
 router.get("/cart", controller.indexCart);
 router.get("/add-to-cart/:id", controller.addToCart);
 
+router.get("/delete-product-shopingcart/:id", controller.cartDelete);
+
 module.exports = router;

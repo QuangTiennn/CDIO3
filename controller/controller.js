@@ -1,6 +1,7 @@
 var Product = require("../models/product.model");
 var Session = require("../models/session.model");
 var User = require("../models/user.model");
+const { model } = require("mongoose");
 
 module.exports.index = async (req, res) => {
   let products = await Product.find();
@@ -36,7 +37,7 @@ module.exports.addToCart = async (req, res, next) => {
     return item.product.toString() === productId;
   });
   
-  //console.log((await Session.findOne().populate("cart.product").lean()).cart);
+  console.log((await Session.findOne().populate("cart.product").lean()).cart);
   
   if (existingProduct) {
     existingProduct.totalQty += 1;
@@ -51,28 +52,55 @@ module.exports.addToCart = async (req, res, next) => {
   return res.redirect("back");
 };
 
-// module.exports.reduce = (req, res, next) => {
-// 	var productId = req.params.id;
-// 	var cart = new Cart(req.session.cart ? req.session.cart : {});
-// 	cart.reduceByOne(productId);
-// 	req.session.cart = cart;
-// 	console.log(req.session.cart);
-// 	req.
-// 	res.redirect('/cart');
-// }
+module.exports.reduce = (req, res, next) => {
+	var productId = req.params.id;
+	var cart = new Cart(req.session.cart ? req.session.cart : {});
+	cart.reduceByOne(productId);
+	req.session.cart = cart;
+	console.log(req.session.cart);
+	req.
+	res.redirect('/cart');
+}
 
-// module.exports.remove = (req, res, next) => {
-// 	var productId = req.params.id;
-// 	var cart = new Cart(req.session.cart ? req.session.cart : {});
-// 	cart.removeAll(productId);
-// 	req.session.cart = cart;
-// 	res.redirect('/shopping-cart');
-// }
+module.exports.remove = (req, res, next) => {
+	var productId = req.params.id;
+	var cart = new Cart(req.session.cart ? req.session.cart : {});
+	cart.removeAll(productId);
+	req.session.cart = cart;
+	res.redirect('/shopping-cart');
+}
 
-// module.exports.cart = (req, res, next) => {
-// 	if (!req.session.cart) {
-// 		return res.render('../views/cart/cart.pug', { products: null });
-// 	}
-// 	var cart = new Cart(req.session.cart);
-// 	res.render('../views/cart/cart.pug', { products: cart.generateArray(), totalPrice: cart.totalPrice });
-// }
+module.exports.cart = (req, res, next) => {
+	if (!req.session.cart) {
+		return res.render('../views/cart/cart.pug', { products: null });
+	}
+	var cart = new Cart(req.session.cart);
+	res.render('../views/cart/cart.pug', { products: cart.generateArray(), totalPrice: cart.totalPrice });
+}
+
+
+module.exports.cartDelete = async (req,res) => {
+  try{
+    const productId = req.params.id;
+    console.log(productId,'[productId]');
+    const session = await Session.findById(req.signedCookies.sessionId);
+    // console.log(session.cart,'[session.cart]')
+    var existingProduct = session.cart.find(function(item){
+      return item.product.toString() === productId;
+    });
+    console.log((await Session.findOne().populate("cart.product").lean()).cart);
+    console.log(existingProduct.product,'[existingProduct]');
+    if(existingProduct.totalQty > 0){
+      existingProduct.totalQty -= 1;
+    }
+    if(existingProduct.totalQty == 0){
+      session.cart.pop({
+        product : productId
+      })
+    }
+    await session.save();
+    res.redirect("/cart")
+  }catch(err){
+    console.log(err,'[err]');
+  }
+};

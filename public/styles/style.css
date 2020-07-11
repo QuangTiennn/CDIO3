@@ -260,7 +260,7 @@ body{
 /* page register */
 
 #bodyRegister{
-    background-image:url(../images/bgLogin.jpg);
+    background:  linear-gradient(to right, #3a4354, #999999);
 }
 #registerHere{
     margin-left: 200px;
@@ -278,7 +278,7 @@ body{
 }
 
 #divFormRegister{
-    background-color:#2D5F7B;
+    background:  linear-gradient(to right, #3a4354, #999999);
     margin-left: 200px;
     margin-top: 50px;
     box-shadow: 5px 10px 8px 10px rgb(35, 80, 105);
@@ -324,8 +324,8 @@ body{
 }
 
 #btnRegister{
-    margin-left: 280px;
-    width: 150px;
+    margin-left: 180px;
+    width: auto;
 }
 
 /* edit user */
